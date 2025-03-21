@@ -11,9 +11,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 app = Flask(__name__, static_folder='public', static_url_path='')
-CORS(app, resources={r"/*": {"origins": "*"}},
+CORS(app, resources={r"/*": {"origins": "https://render-chatbot-hi1x.onrender.com"}},
      methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
      allow_headers=["Content-Type", "Authorization"])
+
 
 # Load the transformer model (this may take a few seconds on startup).
 model = SentenceTransformer('all-MiniLM-L6-v2')
